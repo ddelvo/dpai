@@ -28,6 +28,7 @@ func (t twoSumUseCase) FindTwoSum(ctx context.Context, numbers []int, target int
 		final = append(final, i, index)
 		return final, nil
 	}
+	_ = t.repository.ClearData(ctx)
 	return final, nil
 }
 

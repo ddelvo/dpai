@@ -20,8 +20,12 @@ func main() {
 	tsUseCase := usecase.NewTwoSumUseCase(tsRepo)
 	tsHandler := handler.NewTwoSumHandler(tsUseCase)
 
+	threeSumUseCase := usecase.NewThreeSumUseCase(tsRepo)
+	threeSumHandler := handler.NewThreeSumHandler(threeSumUseCase)
+
 	routerOpt := router.Options{
-		TwoSumHandler: tsHandler,
+		TwoSumHandler:   tsHandler,
+		ThreeSumHandler: threeSumHandler,
 	}
 
 	r := router.NewRouter(routerOpt)
